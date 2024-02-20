@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Welcome to home page of data</h1>
+<a href="/add/">Add</a>
+<form action="" method="post">
+{% csrf_token %}
+<input type="text" name="search">
+<button type="submit">Search</button>
+</form>
+    <table border="2px" cellpadding="10px">
+    <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Salary</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Delete</th>
+    <th>Update</th>
+    </tr>
+   {% for item in rows %}
+    <tr>
+    <td>{{item.name}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.phone}}</td>
+    <td>{{item.salary}}</td>
+    <td>{{item.city}}</td>
+    <td>{{item.state}}</td>
+    <td><a href="/delete/{{item.id}}">Delete</a></td>
+    <td><a href="/update/{{item.id}}">Update</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

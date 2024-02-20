@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+    <div class="col-12">
+    <form action="" method="post">
+    {% csrf_token %}
+    <div>
+    <label for="n">Name</label>
+    <input type="text"id="n" class="form-control" name="name" value={{d.name}}>
+    </div>
+    <div>
+    <label for="em">Email</label>
+    <input type="text"id="em" class="form-control" name="email" value={{d.email}}>
+    </div>
+    <div>
+    <label for="ph">Phone</label>
+    <input type="text"id="ph" class="form-control" name="phone" value={{d.phone}}>
+    </div>
+      <div>
+    <label for="sal">Salary</label>
+    <input type="text"id="sal" class="form-control" name="salary" value={{d.salary}}>
+    </div>
+    <div>
+    <label for="ct">City</label>
+    <input type="text"id="ct" class="form-control" name="city" value={{d.city}}>
+    </div>
+    <div>
+        <label for="st">State</label>
+        <input type="text"id="st" class="form-control" name="state" value={{d.state}}>
+    </div>
+    <button type="submit">Save</button>
+    <button type="submit"><a href="/data/">Cancel</a></button>
+    </form>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
